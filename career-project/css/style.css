@@ -1,0 +1,309 @@
+/* this css file is empty so you can create your own styles and coloring. 
+Please take a look at the example file CSS for inspiration.
+*/
+/*
+CSS Organization
+1. colors
+2. global/mobile styles
+3. tablet size styles
+4. desktop size styles
+*/
+
+/* colors */
+:root{
+  --LHSGreen1: #a1886b;
+  --LHSYellow: rgb(105, 85, 59);
+  --LHSYellowA: #e6dbcc;
+  --LHSGreen2: #7a6748;
+  --LHSGray: #e4dacb;
+  --darkbrown: #b4a08b;
+}
+
+/* GLOBAL STYLES */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header.site-header, footer h5{
+  background: linear-gradient(-45deg, var(--LHSGreen2), var(--LHSGreen1));
+  color: rgb(230, 220, 209);
+  margin: 0;
+  text-align: center;
+  border-bottom: var(--LHSGreen1);
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
+
+h1,footer h5{
+  padding: .5em;
+  margin: 0;
+
+}
+h2, h3, h4, h5, h6{
+  color: var(--LHSGreen1);
+}
+
+.menu-link{
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--LHSYellow);
+  color: rgb(165, 148, 128);
+  font-weight: bold;
+  padding: .5em;
+  border-radius: .5em;
+  margin-left: .5em;
+}
+
+.by-line{
+  color: var(--LHSYellow);
+  font-style:oblique;
+}
+
+a{
+  color: var(--LHSGreen1);
+}
+
+a:hover{
+  text-decoration: none;
+  color: var(--LHSGreen2);
+}
+
+nav a{
+  min-height: 50px;
+  display: inline-block;
+}
+
+nav.pathway{
+  max-height: 0;
+  overflow:hidden;
+  transition: all linear 2s; 
+  background-color:var(--LHSYellow);
+}
+
+nav.pathway.active{
+  max-height: 50em;
+  background-color:var(--LHSYellowA);
+}
+
+div.back-to-top{
+  max-height: initial;
+}
+
+nav h3.hidden{
+  display: none;
+}
+
+div.back-to-top.hidden{
+  max-height: 0;
+  overflow: hidden;
+}
+
+
+aside a.button{
+  background-color: var(--darkbrown);
+  border-radius: 5px;
+  padding: .5em;
+  color: var(--LHSYellow);
+  transition: all linear .5s;
+  margin: 1em auto;
+  display: block;
+  text-align: center;
+  width: fit-content;
+}
+
+
+aside a.button:hover{
+  background-color: var(--LHSYellow);
+  color: var(--darkbrown);
+}
+
+nav.pathway a{
+  display:block;
+  text-decoration: none;
+  width: 100%;
+  padding: 5px;
+  border: solid var(--LHSGreen2) 3px;
+  background-color:  var(--LHSGreen1);
+  color: var(--LHSYellow);
+}
+
+
+header nav.pathway a:hover{
+  color:  var(--LHSGreen1);
+  background-color: var(--LHSYellow);
+
+}
+
+figure{
+  font-size: 80%;
+}
+
+figure.vertical-orientation, figure.horizontal-orientation{
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+figure.hero-image{
+  margin: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero-image img, figure img{
+  max-width: 100%;
+}
+
+nav#internal {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  padding: 0 1em 1em;
+}
+
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+}
+
+aside#related {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--LHSYellowA);
+
+}
+
+cite{
+  display: block;
+  margin-bottom: 1em;
+}
+
+dt{
+  font-weight: bold;
+  color: #725f44;
+}
+
+dd p{
+  margin-bottom: 2px;
+}
+dd ol{
+  margin-top: 2px;
+}
+
+
+@media screen and (min-width:550px) {
+  nav.pathway{
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  nav.pathway a{
+      width: 50%;
+  }
+
+  figure.vertical-orientation{
+      clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+      margin-top: -75%;
+  }
+}
+
+@media screen and (min-width:700px) {
+
+  figure.vertical-orientation{
+      clip-path: none;
+      float: right; 
+      width: 40%;
+      margin: 1em .5em 1em 1em;
+  }
+ }
+ 
+
+@media screen and (min-width:1000px) {
+  nav.pathway{
+      background-color:var(--LHSYellow);
+      padding-bottom: 0;
+  }
+  
+  nav.pathway.active{
+      max-height: 20em;
+      padding-bottom: .5em;
+  }
+
+  nav a{
+      min-height: 50px;
+      display: inline;
+  }
+
+  nav.pathway a{
+      display: inline-block;
+      text-decoration: none;
+      width: fit-content;
+      padding: 5px;
+      border-radius: 5px;
+      border: solid var(--LHSGreen2) 3px;
+      background-color:  var(--LHSGreen1);
+      color: var(--LHSYellow);
+      margin-top: .5em;
+      margin-left: .5em;
+  }
+
+
+  #tasks, #workplace {
+      display: inline-block;
+      margin: auto 0;
+      width: 49%;
+      vertical-align: top;
+  }
+
+  main {
+      width: 65%;
+      margin: 0;
+      display: inline-block;
+      padding-right:1.5em;
+  }
+
+  aside#related {
+      float: right;
+      width: 35%;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+  }
+
+  header.site-header, footer h5{
+      text-align: left;
+  }
+
+  aside a.button{
+      margin-top: 2em;
+      float: right;
+  }
+
+  figure.vertical-orientation{
+      float: right; 
+      width: 30%;
+      margin: 1em;;
+  }
+  .o{
+    color:#4d402f;
+  }
+  figure{
+  color:rgb(153, 141, 119);
+  }
+  img{
+    border-radius: 5%;
+    border-color: #4d402f;
+    border-width: 5px;
+    border-style: solid;
+  }
+  }
